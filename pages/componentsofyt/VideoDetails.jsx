@@ -1,5 +1,7 @@
+import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
 
 const VideoDetails = ({ videoData }) => {
   const [formats, setFormats] = useState([]);
@@ -7,8 +9,8 @@ const VideoDetails = ({ videoData }) => {
     setFormats(videoData.formats);
   }, [videoData]);
 
-  const handleDownload = (itag) => {
-    window.open(
+  const handleDownload =async (itag) => {
+   await axios.call(
       `https://gearonlinecolts.vercel.app/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`
     );
   };
