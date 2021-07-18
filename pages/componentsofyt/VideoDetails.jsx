@@ -9,17 +9,15 @@ const VideoDetails = ({ videoData }) => {
 
   const handleDownload = (itag) => {
     window.open(
-      `https://gearonlinecolts-7cfmbde6e-mayureshshitole.vercel.app/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`
+      `https://gearonlinecolts.vercel.app/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`
     );
   };
 
-  if(!videoData){
-    return(
-      <h1>No Data Found</h1>
-    )
+  if (!videoData) {
+    return <h1>No Data Found</h1>;
   }
 
-   return (
+  return (
     <>
       {" "}
       <div className="px-3 py-5 sm:max-w-5xl mx-auto border-2 border-blue-500 rounded-2xl shadow-lg space-y-2">
