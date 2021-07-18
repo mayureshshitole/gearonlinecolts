@@ -16,7 +16,7 @@ export default function Home() {
 
     if (videoURL) {
       const { data } = await axios.get(
-        `http://localhost:3000/api/ytinfo?video=${videoURL}`
+        `https://gearonlinecolts.vercel.app//api/ytinfo?video=${videoURL}`
       );
       setVideoData(data);
       setLoading(false);

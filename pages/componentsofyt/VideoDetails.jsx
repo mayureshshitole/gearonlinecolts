@@ -9,7 +9,7 @@ const VideoDetails = ({ videoData }) => {
 
   const handleDownload = (itag) => {
     window.open(
-      `http://localhost:3000/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`
+      `https://gearonlinecolts.vercel.app//api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`
     );
   };
 
