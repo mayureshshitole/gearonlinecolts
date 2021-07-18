@@ -10,7 +10,7 @@ const VideoDetails = ({ videoData }) => {
 
   const handleDownload = async (itag) => {
     await window.open(
-      `https://gearonlinecolts.vercel.app/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`,
+      `http://gearonlinecolts.vercel.app/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`,
       "_self"
     );
   };
