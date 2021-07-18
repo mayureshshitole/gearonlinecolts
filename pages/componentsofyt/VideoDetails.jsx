@@ -2,16 +2,16 @@ import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-
 const VideoDetails = ({ videoData }) => {
   const [formats, setFormats] = useState([]);
   useEffect(() => {
     setFormats(videoData.formats);
   }, [videoData]);
 
-  const handleDownload =async (itag) => {
-   await axios.call(
-      `https://gearonlinecolts.vercel.app/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`
+  const handleDownload = async (itag) => {
+    await window.open(
+      `https://gearonlinecolts.vercel.app/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`,
+      "_self"
     );
   };
 
@@ -91,12 +91,9 @@ const VideoDetails = ({ videoData }) => {
           })}
         </div>
       </div>
-      <div className="">
+      <div>
         <h1>Watch this again!</h1>
-        <iframe
-          src={videoData.videoDetails.embed.iframeUrl}
-          className=""
-        ></iframe>
+        <iframe src={videoData.videoDetails.embed.iframeUrl}></iframe>
       </div>
       <div className="h-10"></div>
     </>
@@ -104,3 +101,4 @@ const VideoDetails = ({ videoData }) => {
 };
 
 export default VideoDetails;
+//https://gearonlinecolts.vercel.app/api/
