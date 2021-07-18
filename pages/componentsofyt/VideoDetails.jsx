@@ -9,7 +9,7 @@ const VideoDetails = ({ videoData }) => {
 
   const handleDownload = (itag) => {
     window.open(
-      `https://gearonlinecolts.vercel.app/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`
+      `https://gearonlinecolts-7cfmbde6e-mayureshshitole.vercel.app/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`
     );
   };
 
