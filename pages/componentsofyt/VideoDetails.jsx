@@ -12,12 +12,17 @@ const VideoDetails = ({ videoData }) => {
       `http://localhost:3000/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`
     );
   };
-  return (
+
+  if(!videoData){
+    return(
+      <h1>No Data Found</h1>
+    )
+  }
+
+   return (
     <>
-      <div
-        key={videoData.page}
-        className="px-3 py-5 sm:max-w-5xl mx-auto border-2 border-blue-500 rounded-2xl shadow-lg space-y-2"
-      >
+      {" "}
+      <div className="px-3 py-5 sm:max-w-5xl mx-auto border-2 border-blue-500 rounded-2xl shadow-lg space-y-2">
         <div className="flex">
           {" "}
           <Image
@@ -86,10 +91,12 @@ const VideoDetails = ({ videoData }) => {
           })}
         </div>
       </div>
-
       <div className="">
         <h1>Watch this again!</h1>
-        <iframe src={videoData.videoDetails.embed.iframeUrl} className=""></iframe>
+        <iframe
+          src={videoData.videoDetails.embed.iframeUrl}
+          className=""
+        ></iframe>
       </div>
       <div className="h-10"></div>
     </>

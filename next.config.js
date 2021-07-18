@@ -1,5 +1,6 @@
 module.exports = {
-    images: {
-      domains: ['i.ytimg.com','yt3.ggpht.com'],
-    },
-  };
+  reactStrictMode: true,
+  images: {
+    domains: ["i.ytimg.com", "yt3.ggpht.com","https://youtube.com"],
+  },
+};
