@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "aws": "next start -p 443",
+    "aws-https": "next start -p 443",
+    "aws-http": "next start -p 80",
     "export": "next export"
   },
   "dependencies": {
