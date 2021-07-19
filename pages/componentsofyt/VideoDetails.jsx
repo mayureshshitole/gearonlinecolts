@@ -48,7 +48,7 @@ const VideoDetails = ({ videoData }) => {
             </h1>
             <h4 className="text-gray-700">
               Subscribers:{" "}
-              {videoData.videoDetails.author.subscriber_count.toLocaleString()}
+              {videoData.videoDetails.author.subscriber_count}
             </h4>
           </div>
         </div>
