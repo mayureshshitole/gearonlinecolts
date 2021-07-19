@@ -7,13 +7,13 @@
     "build": "next build",
     "start": "next start",
     "start:prod": "next start -p 80",
-    "export":"next export"
+    "export": "next export"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.3.1",
     "axios": "^0.21.1",
     "lottie-web": "^5.7.12",
-    "next": "11.0.1",
+    "next": "^10.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
