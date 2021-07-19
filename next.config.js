@@ -6,6 +6,5 @@ module.exports = {
     path: "",
   },
   trailingSlash: true,
-  webpack5: false
-  ,
+  webpack5: false,
 };
