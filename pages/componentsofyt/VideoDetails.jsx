@@ -1,16 +1,16 @@
-import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const VideoDetails = ({ videoData }) => {
   const [formats, setFormats] = useState([]);
+
   useEffect(() => {
     setFormats(videoData.formats);
   }, [videoData]);
 
   const handleDownload = async (itag) => {
     await window.open(
-      `https://gearonlinecolts.vercel.app/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`,
+      `/api/ytdownload?itag=${itag}&video=${videoData.videoDetails.video_url}`,
       "_self"
     );
   };
@@ -62,7 +62,7 @@ const VideoDetails = ({ videoData }) => {
           width={500}
           height={300}
           layout="intrinsic"
-          className="rounded-lg mx-auto"
+          className="rounded-lg mt-5"
         />
         <h1 className="text-2xl font-semibold">
           {videoData.videoDetails.title}

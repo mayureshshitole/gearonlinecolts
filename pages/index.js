@@ -15,9 +15,7 @@ export default function Home() {
     setLoading(true);
 
     if (videoURL) {
-      const { data } = await axios.get(
-        `https://gearonlinecolts.vercel.app/api/ytinfo?video=${videoURL}`
-      );
+      const { data } = await axios.get(`/api/ytinfo?video=${videoURL}`);
       setVideoData(data);
       setLoading(false);
     }
