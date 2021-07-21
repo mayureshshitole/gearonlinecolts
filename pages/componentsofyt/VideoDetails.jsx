@@ -22,7 +22,7 @@ const VideoDetails = ({ videoData }) => {
   return (
     <>
       {" "}
-      <div className="px-3 py-5 sm:max-w-5xl mx-auto border-2 border-blue-500 rounded-2xl shadow-lg space-y-2">
+      <div className="px-3 py-5 w-full sm:max-w-5xl mx-auto border-2 border-blue-500 rounded-2xl shadow-lg space-y-2">
         <div className="flex">
           {" "}
           <Image
@@ -37,7 +37,7 @@ const VideoDetails = ({ videoData }) => {
             layout="intrinsic"
             className="rounded-full border-2 border-blue-500"
           />
-          <div>
+          <div >
             <h1 className="text-lg font-semibold">
               <a
                 href={videoData.videoDetails.author.channel_url}
@@ -47,8 +47,7 @@ const VideoDetails = ({ videoData }) => {
               </a>
             </h1>
             <h4 className="text-gray-700">
-              Subscribers:{" "}
-              {videoData.videoDetails.author.subscriber_count}
+              Subscribers: {videoData.videoDetails.author.subscriber_count}
             </h4>
           </div>
         </div>
@@ -62,14 +61,18 @@ const VideoDetails = ({ videoData }) => {
           width={500}
           height={300}
           layout="intrinsic"
-          className="rounded-lg mt-5"
+          className="rounded-lg  "
         />
         <h1 className="text-2xl font-semibold">
           {videoData.videoDetails.title}
         </h1>
 
-        <p className="text-gray-700">{videoData.videoDetails.description}</p>
-        <h2>Best quality Downloadable formats of this video:</h2>
+        <p className="text-gray-700 text-base overflow-x-scroll scrollbar-hide">
+          {videoData.videoDetails.description}
+        </p>
+        <h2 className="text-lg font-semibold">
+          Best quality Downloadable formats of this video:
+        </h2>
         <div className="flex justify-center items-center space-x-1 max-w-5xl mx-auto overflow-x-scroll scrollbar-hide py-5">
           {formats.map((item, index) => {
             return (
