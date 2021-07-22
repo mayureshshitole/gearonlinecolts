@@ -93,7 +93,13 @@ const VideoDetails = ({ videoData }) => {
             );
           })}
         </div>
-      </div>
+      </div> 
+      <a href="/"target="_blank">
+      <button
+              className="text-white font-semibold uppercase px-10 py-2 rounded-lg  bg-gradient-to-r from-blue-500 to-purple-700  shadow-lg transform hover:scale-110 transition duration-500 ease-in-out"
+              required
+            >Download Another Video
+            </button></a>
       <div>
         <h1>Watch this again!</h1>
         <iframe src={videoData.videoDetails.embed.iframeUrl}></iframe>

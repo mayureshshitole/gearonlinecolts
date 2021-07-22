@@ -6,6 +6,7 @@ import Loading from "./componentsofyt/Loading";
 import axios from "axios";
 import VideoDetails from "./componentsofyt/VideoDetails";
 import NavBar from "./componentsofyt/NavBar";
+import HowToDownload from "./blogs/How-To-Download-Youtube-Video";
 
 export default function Home() {
   const [videoURL, setVideoURL] = useState("");
@@ -28,18 +29,25 @@ export default function Home() {
 
       <div className="flex flex-col space-y-10 justify-center items-center pt-10 md:pt-20 px-2">
         <Head>
-          <title>YouTube Video Downloader | GearOnlineColts</title>
+          <title>YouTube Downloader - Download Youtube videos for free!</title>
           <meta
             name="description"
-            content="Download any YouTube video in high quality filtered by our algorithm. GearOnlineColts is the platform for all digital colts to make there life easy. We are trying to make digital tools to ease your load and try to focus on digital content creation."
+            content="Open  Youtube video download website and enter the video’s URL to the corresponding field, at the top of the page. Click “Download” and you’ll see the list with all available links. Choose the desired format and get the file you need. That’s it, as simple as that! Download any YouTube video in high quality filtered by our algorithm. GearOnlineColts is the platform for all digital colts to make their life easy. We are trying to make digital tools to ease your load and try to focus on digital content creation."
           />
           <meta
             name="keywords"
             content="youtube, youtube video downloder, high quality, download youtube videos in high quality, gearonlinecolts,youtube.com"
+          />{" "}
+          <meta charset="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
+        <h1 className="text-2xl md:text-4xl font-semibold ">
+          Youtube Video Downloader
+        </h1>
         <main className="relative flex flex-col justify-center items-center w-full md:w-1/3 mx-auto ">
           <div className="card bg-blue-500 shadow-lg   w-full h-full rounded-3xl absolute  transform -rotate-3"></div>
           <div className="card bg-purple-700 shadow-lg   w-full h-full rounded-3xl absolute  transform rotate-3"></div>
@@ -77,6 +85,7 @@ export default function Home() {
         </main>
         {loading && <Loading />}
         {videoData && <VideoDetails videoData={videoData} />}
+        <HowToDownload />
       </div>
     </>
   );
