@@ -4,17 +4,17 @@ const Footer = () => {
   return (
     <div className="min-w-full border-t border-gray-200">
       <div className="flex justify-center items-center flex-col md:flex-row md:space-x-4 py-5 border-b border-gray-200">
-      <Link href="/Privacy-Policy">
+      <Link href="/legal/Privacy-Policy">
         <a>
           <p>Privacy Policy</p>
         </a>
       </Link>
-      <Link href="/Terms-and-Conditions">
+      <Link href="/legal/Terms-and-Conditions">
         <a>
           <p>Terms and Conditions</p>
         </a>
       </Link>
-      <Link href="/Disclaimer">
+      <Link href="/legal/Disclaimer">
         <a>
           <p>Disclaimer</p>
         </a>
