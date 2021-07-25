@@ -1,6 +1,7 @@
 {
   "name": "gearonlinecolts",
   "version": "0.1.0",
+  "description": "GearOnlineColts is a free for all website with bunch of usefull tools ",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -24,5 +25,7 @@
     "autoprefixer": "^10.3.1",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4"
-  }
+  },
+  "author": "GearOnlineColts.com | Mayuresh Shitole",
+  "license": "ISC"
 }

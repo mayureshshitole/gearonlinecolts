@@ -7,6 +7,7 @@ import axios from "axios";
 import VideoDetails from "./componentsofyt/VideoDetails";
 import NavBar from "./componentsofyt/NavBar";
 import HowToDownload from "./blogs/How-To-Download-Youtube-Video";
+import Footer from "./componentsofyt/Footer";
 
 export default function Home() {
   const [videoURL, setVideoURL] = useState("");
@@ -14,6 +15,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   const handleViedoInfo = async () => {
+   
     setLoading(true);
 
     if (videoURL) {
@@ -38,12 +40,12 @@ export default function Home() {
             name="keywords"
             content="youtube, youtube video downloder, high quality, download youtube videos in high quality, gearonlinecolts,youtube.com"
           />{" "}
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1"
           />
-          <link rel="icon" href="/favicon.ico" />
+          
         </Head>
         <h1 className="text-2xl md:text-4xl font-semibold ">
           Youtube Video Downloader
@@ -86,6 +88,7 @@ export default function Home() {
         {loading && <Loading />}
         {videoData && <VideoDetails videoData={videoData} />}
         <HowToDownload />
+        <Footer />
       </div>
     </>
   );
