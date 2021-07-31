@@ -1,4 +1,4 @@
-import NavBar from "../componentsofyt/NavBar";
+import NavBar from "./componentsofyt/NavBar";
 import Link from "next/link";
 const TandC = () => {
   return (
@@ -336,14 +336,12 @@ const TandC = () => {
           damage of any nature.
         </p>
       </div>
-      <div className="cursor-pointer">
+      <div className="cursor-pointer flex justify-center items-center">
         <Link href="/">
           <img
             src="/logoGOC.svg"
-            width="350"
-            height="350"
+            className="h-60 w-60 mb-5"
             alt="Logo image for www.gearonlinecolts.com"
-            priority
           />
         </Link>
       </div>

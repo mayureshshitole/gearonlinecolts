@@ -8,7 +8,7 @@ const HowToDownload = () => {
       <div className="sm:max-w-5xl mx-auto flex flex-col justify-center items-center">
         <h2 className="text-xl md:text-2xl">Step 1: Paste video URL/Link</h2>
         <p className="text-base font-light leading-relaxed mt-0 mb-4 text-gray-700 md:max-w-3xl">
-          In order to download any youtube video first of all you have to click <a href="/" target="_blank" className="text-blue-500">www.gearonlinecolts.com</a>
+          In order to download any youtube video first of all you have to click <a href="/" target="_blank" className="text-blue-500">www.gearonlinecolts.com </a>
           You will get Home page where you have to paste your YouTube.com Video Url/Link. So Paste it as shown in Image.
         </p>
         <Image

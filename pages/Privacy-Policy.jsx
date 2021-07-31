@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import NavBar from "../componentsofyt/NavBar";
+import NavBar from "./componentsofyt/NavBar";
 
 const PrivacyPolicy = () => {
   return (
@@ -154,14 +154,12 @@ const PrivacyPolicy = () => {
           agree to its Terms and Conditions.
         </p>
       </div>
-      <div className="cursor-pointer">
+      <div className="cursor-pointer flex justify-center items-center">
         <Link href="/">
           <img
             src="/logoGOC.svg"
-            width="350"
-            height="350"
+            className="h-60 w-60 mb-5"
             alt="Logo image for www.gearonlinecolts.com"
-            priority
           />
         </Link>
       </div>

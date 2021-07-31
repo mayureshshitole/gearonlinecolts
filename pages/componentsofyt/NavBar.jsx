@@ -11,8 +11,7 @@ const NavBar = () => {
                 src="/logoGOC.svg"
                 width="50"
                 height="50"
-                alt="Logo image for www.gearonlinecolts.com"
-                priority
+                alt="Logo image for www.gearonlinecolts.com"             
               />
             </div>
             <h1 className="text-white font-semibold text-2xl md:text-3xl">
