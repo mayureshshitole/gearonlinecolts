@@ -21,15 +21,15 @@ const Footer = () => {
         </Link>
       </div>
       <div className="py-5 flex flex-col  justify-center items-center">
+      <div className="cursor-pointer flex justify-center items-center">
         <Link href="/">
-          <Image
-            src={"/logo.png"}
-            width={100}
-            height={100}
-            layout="intrinsic"
-            alt="logo image of www.gearonlinecolts.com"
+          <img
+            src="/logoGOC.svg"
+            className="h-40 w-40 mb-5"
+            alt="Logo image for www.gearonlinecolts.com"
           />
         </Link>
+      </div>
         <p className="mt-3 text-xs lg:text-sm leading-none text-gray-900 dark:text-gray-50">
           2021 GearOnlineColts . All Rights Reserved.
         </p>

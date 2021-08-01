@@ -2,19 +2,19 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import Loading from "./componentsofyt/Loading";
+import Loading from "../componentsofyt/Loading";
 import axios from "axios";
-import VideoDetails from "./componentsofyt/VideoDetails";
-import NavBar from "./componentsofyt/NavBar";
-import HowToDownload from "./blogs/How-To-Download-Youtube-Video";
-import Footer from "./componentsofyt/Footer";
-import Link from "next/link";
+import VideoDetails from "../componentsofyt/VideoDetails";
+import NavBar from "../componentsofyt/NavBar";
+import HowToDownload from "../blogs/How-To-Download-Youtube-Video";
+import Footer from "../componentsofyt/Footer";
 import { useToasts } from "react-toast-notifications";
 
 export default function Home() {
   const [videoURL, setVideoURL] = useState("");
   const [videoData, setVideoData] = useState();
   const [loading, setLoading] = useState(false);
+
   const { addToast } = useToasts();
 
   const handleViedoInfo = async () => {
@@ -45,6 +45,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
+
       <div className="flex flex-col space-y-10 justify-center items-center pt-10 md:pt-20 px-2">
         <Head>
           <title>YouTube Downloader - Download Youtube videos for free!</title>
@@ -62,31 +63,7 @@ export default function Home() {
             content="width=device-width, initial-scale=1, maximum-scale=1"
           />
         </Head>
-        <Link href="/downloaders">
-          <a>
-            <button className=" flex justify-between items-center  text-white font-semibold uppercase px-5 py-2 rounded-lg w-full bg-gradient-to-r from-blue-500 to-purple-700  shadow-lg md:transform md:hover:scale-110 transition duration-500 ease-in-out">
-              <h2 className="text-left">
-                {" "}
-                Check Out More Social Media Video Downloaders
-              </h2>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-w-14 w-14"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </button>
-          </a>
-        </Link>
-        <h1 className="text-2xl md:text-4xl font-semibold ">
+        <h1 className="text-2xl md:text-4xl font-semibold text-center">
           Youtube Video Downloader
         </h1>
         <main className="relative flex flex-col justify-center items-center w-full md:w-1/3 mx-auto ">

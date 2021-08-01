@@ -2,19 +2,20 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import Loading from "./componentsofyt/Loading";
+import Loading from "../componentsofyt/Loading";
 import axios from "axios";
-import VideoDetails from "./componentsofyt/VideoDetails";
-import NavBar from "./componentsofyt/NavBar";
-import HowToDownload from "./blogs/How-To-Download-Youtube-Video";
-import Footer from "./componentsofyt/Footer";
-import Link from "next/link";
+import VideoDetails from "../componentsofyt/VideoDetails";
+import NavBar from "../componentsofyt/NavBar";
+import HowToDownload from "../blogs/How-To-Download-Youtube-Video";
+import Footer from "../componentsofyt/Footer";
+import FBvideo from "../componentsofyt/FBvideo";
 import { useToasts } from "react-toast-notifications";
 
 export default function Home() {
   const [videoURL, setVideoURL] = useState("");
-  const [videoData, setVideoData] = useState();
+  const [fbVideo, setfbVideo] = useState();
   const [loading, setLoading] = useState(false);
+
   const { addToast } = useToasts();
 
   const handleViedoInfo = async () => {
@@ -24,10 +25,10 @@ export default function Home() {
         if (
           videoURL.substring(0, 8) === "https://" ||
           videoURL.substring(0, 7) === "http://" ||
-          videoURL.substring(0, 19) === "https://www.youtube.com" ||
-          videoURL.substring(0, 18) === "http://www.youtube.com"
+          videoURL.substring(0, 19) === "https://www.fb.watch.com" ||
+          videoURL.substring(0, 18) === "http://www.fb.watch.com"
         ) {
-          const { data } = await axios.get(`/api/ytinfo?video=${videoURL}`);
+          const { data } = await axios.get(`/api/fbvideo?video=${videoURL}`);
           setVideoData(data);
           setLoading(false);
         } else {
@@ -45,16 +46,19 @@ export default function Home() {
   return (
     <>
       <NavBar />
+
       <div className="flex flex-col space-y-10 justify-center items-center pt-10 md:pt-20 px-2">
         <Head>
-          <title>YouTube Downloader - Download Youtube videos for free!</title>
+          <title>
+            Facebook Downloader - Download Facebook videos for free!
+          </title>
           <meta
             name="description"
-            content="Open  Youtube video download website and enter the video’s URL to the corresponding field, at the top of the page. Click “Download” and you’ll see the list with all available links. Choose the desired format and get the file you need. That’s it, as simple as that! Download any YouTube video in high quality filtered by our algorithm. GearOnlineColts is the platform for all digital colts to make their life easy. We are trying to make digital tools to ease your load and try to focus on digital content creation."
+            content="Open Facebook video download website and enter the video’s URL to the corresponding field, at the top of the page. Click “Download” and you’ll see the list with all available links. Choose the desired format and get the file you need. That’s it, as simple as that! Download any Facebook video in high quality filtered by our algorithm. GearOnlineColts is the platform for all digital colts to make their life easy. We are trying to make digital tools to ease your load and try to focus on digital content creation."
           />
           <meta
             name="keywords"
-            content="youtube, youtube video downloder, high quality, download youtube videos in high quality, gearonlinecolts,youtube.com ,goc"
+            content="facebook, facebook video downloder, high quality, download facebook videos in high quality, gearonlinecolts,facebook.com ,goc"
           />{" "}
           <meta charSet="utf-8" />
           <meta
@@ -62,32 +66,8 @@ export default function Home() {
             content="width=device-width, initial-scale=1, maximum-scale=1"
           />
         </Head>
-        <Link href="/downloaders">
-          <a>
-            <button className=" flex justify-between items-center  text-white font-semibold uppercase px-5 py-2 rounded-lg w-full bg-gradient-to-r from-blue-500 to-purple-700  shadow-lg md:transform md:hover:scale-110 transition duration-500 ease-in-out">
-              <h2 className="text-left">
-                {" "}
-                Check Out More Social Media Video Downloaders
-              </h2>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-w-14 w-14"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </button>
-          </a>
-        </Link>
-        <h1 className="text-2xl md:text-4xl font-semibold ">
-          Youtube Video Downloader
+        <h1 className="text-2xl md:text-4xl font-semibold text-center">
+          Facebook Video Downloader
         </h1>
         <main className="relative flex flex-col justify-center items-center w-full md:w-1/3 mx-auto ">
           <div className="card bg-blue-500 shadow-lg   w-full h-full rounded-3xl absolute  transform -rotate-3"></div>
@@ -97,11 +77,11 @@ export default function Home() {
             <h1 className="text-3xl font-semibold ">
               GOC's{" "}
               <a href="/" className="text-blue-500 text-4xl">
-                YTmate!
+                FBmate!
               </a>
             </h1>
 
-            <p className="text-gray-700">Paste YouTube video URL</p>
+            <p className="text-gray-700">Paste Facebook video URL</p>
 
             <div className="relative w-full mt-5">
               <input
@@ -111,7 +91,7 @@ export default function Home() {
                 onChange={(e) => setVideoURL(e.target.value)}
               />
               <label className="absolute -top-3 right-0 text-gray-600 text-xs peer-placeholder-shown:text-base peer-focus:-top-3  peer-focus:text-gray-600 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 transition-all">
-                YouTube Video URL
+                Facebook Video URL
               </label>
             </div>
             <br />
@@ -125,8 +105,8 @@ export default function Home() {
           </div>
         </main>
         {loading && <Loading />}
-        {videoData && <VideoDetails videoData={videoData} />}
-        <HowToDownload />
+        {fbVideo && <FBvideo fbVideo={fbVideo} />}
+
         <Footer />
       </div>
     </>

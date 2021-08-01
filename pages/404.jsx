@@ -23,7 +23,31 @@ const NotFound = () => {
         />
       </Head>
       <NavBar />
-      <div className="h-screen w-screen flex flex-col justify-center items-center p-2">
+      <div className=" flex flex-col justify-center items-center p-2">
+        <Link href="/downloaders">
+          <a>
+            <button className=" flex justify-between items-center  text-white font-semibold uppercase px-5 py-2 my-5 rounded-lg w-full bg-gradient-to-r from-blue-500 to-purple-700  shadow-lg md:transform md:hover:scale-110 transition duration-500 ease-in-out">
+              <h2 className="text-left">
+                {" "}
+                Check Out More Social Media Video Downloaders
+              </h2>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-w-14 w-14"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </button>
+          </a>
+        </Link>
         <Link href="/">
           <a className="flex flex-col justify-center items-center">
             <h1 className="text-blue-500 font-bold text-4xl animate-bounce">
@@ -37,8 +61,8 @@ const NotFound = () => {
           <Link href="/">
             <img
               src="/logoGOC.svg"
-              width="350"
-              height="350"
+              width="300"
+              height="300"
               alt="Logo image for www.gearonlinecolts.com"
               priority
             />

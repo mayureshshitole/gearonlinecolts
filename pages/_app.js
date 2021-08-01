@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-
+import { ToastProvider } from "react-toast-notifications";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
@@ -16,7 +16,15 @@ const App = ({ Component, pageProps }) => {
     };
   }, [router.events]);
 
-  return <Component {...pageProps} />;
+  return (
+    <ToastProvider
+      autoDismiss
+      autoDismissTimeout={4000}
+      placement="top-center"
+    >
+      <Component {...pageProps} />
+    </ToastProvider>
+  );
 };
 
 export default App;
